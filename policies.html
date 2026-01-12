@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illistrin FC - Home of Football in Donegal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700 0%, #ffed4e 100%);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "⚽";
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,215,0,0.1)"/></svg>');
+            background-size: 50px 50px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .club-badge {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 2rem auto;
+        }
+
+        .club-img {
+            width: 200px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 2px;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #ffd700;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* News Section */
+        .news-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid #ffd700;
+            transition: all 0.3s ease;
+        }
+
+        .news-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 1.5rem;
+            color: #999;
+        }
+
+        /* History Content */
+        .history-content {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .history-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .history-content strong {
+            color: #1a1a1a;
+        }
+
+        .history-content em {
+            font-style: italic;
+            color: #666;
+        }
+
+        .team-photo {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            display: block;
+        }
+
+        .photo-caption {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .image-placeholder {
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #999;
+            margin: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .club-badge {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-accent"></div>
+        <nav>
+            <a href="#" class="logo">Illistrin FC</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="media.html">In the Media</a></li>
+                <li><a href="teams.html">Teams - 2025</a></li>
+                <li><a href="policies.html">Policies and Procedures</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="club-badge"><img class="club-img" src='./illistrinnew2.png' /></div>
+            <h1>Policies and Procedures</h1>
+            <p class="hero-subtitle">Club Policies, Safeguarding, and Important Documents</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="history-content">
+                    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">Illistrin FC is committed to providing a safe, welcoming, and professional environment for all our players, coaches, and families. Below you will find important club policies and procedures.</p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>Safeguarding Statement</h3>
+                        <p>Our club safeguarding policies and child protection procedures.</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #f0f0f0; border-radius: 5px;">
+                            <p style="font-size: 0.9rem; color: #666;">Document to be uploaded</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📋</div>
+                        <h3>Code of Conduct</h3>
+                        <p>Expected behaviors and standards for players, coaches, and parents.</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #f0f0f0; border-radius: 5px;">
+                            <p style="font-size: 0.9rem; color: #666;">Document to be uploaded</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📝</div>
+                        <h3>Club Constitution</h3>
+                        <p>Official club rules, governance structure, and operating procedures.</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #f0f0f0; border-radius: 5px;">
+                            <p style="font-size: 0.9rem; color: #666;">Document to be uploaded</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">⚖️</div>
+                        <h3>Privacy Policy</h3>
+                        <p>How we collect, use, and protect personal information.</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #f0f0f0; border-radius: 5px;">
+                            <p style="font-size: 0.9rem; color: #666;">Document to be uploaded</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🏥</div>
+                        <h3>Health & Safety</h3>
+                        <p>Club health and safety policies and emergency procedures.</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #f0f0f0; border-radius: 5px;">
+                            <p style="font-size: 0.9rem; color: #666;">Document to be uploaded</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">📄</div>
+                        <h3>Additional Policies</h3>
+                        <p>Other important club documents and procedures.</p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: #f0f0f0; border-radius: 5px;">
+                            <p style="font-size: 0.9rem; color: #666;">Documents to be uploaded</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-left: 4px solid #ffd700;">
+                    <h3 style="margin-bottom: 1rem; color: #1a1a1a;">Important Information</h3>
+                    <p style="line-height: 1.8;">As noted in the content document, this section will contain 4-5 policy documents including the club's safeguarding statement and other important procedures. These documents will be made available for download once provided.</p>
+                    <p style="margin-top: 1rem; line-height: 1.8;">If you have any questions about our policies or procedures, please contact our Child Welfare Officer or any member of the club committee.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#safeguarding">Safeguarding</a>
+                <a href="#downloads">Downloads</a>
+                <a href="#links">Useful Links</a>
+                <a href="#privacy">Privacy Policy</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Illistrin FC - All rights reserved</p>
+                <p>Proudly serving the football community in Donegal, Ireland</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards and news items
+        document.querySelectorAll('.card, .news-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
