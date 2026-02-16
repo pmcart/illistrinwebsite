@@ -85,12 +85,12 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            background: #1a1a1a;
             color: white;
             text-align: center;
             padding: 6rem 2rem;
             position: relative;
+            overflow: hidden;
         }
 
         .hero::before {
@@ -100,21 +100,51 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,215,0,0.1)"/></svg>');
-            background-size: 50px 50px;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 1;
         }
 
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        /* Carousel behind hero */
+        .hero-carousel {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            z-index: 0;
+        }
+
+        .hero-carousel .carousel-track {
+            display: flex;
+            gap: 1.5rem;
+            animation: scroll-left 40s linear infinite;
+            width: max-content;
+        }
+
+        .hero-carousel .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        .hero-carousel .carousel-slide {
+            flex-shrink: 0;
+            width: 350px;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            opacity: 0.8;
+        }
+
+        .hero-carousel .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .hero h1 {
@@ -145,56 +175,7 @@
             width: 200px;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        /* Image Carousel */
-        .carousel-section {
-            background: #1a1a1a;
-            padding: 2rem 0;
-            overflow: hidden;
-        }
-
-        .carousel-track-wrapper {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .carousel-track {
-            display: flex;
-            gap: 1.5rem;
-            animation: scroll-left 40s linear infinite;
-            width: max-content;
-        }
-
-        .carousel-track:hover {
-            animation-play-state: paused;
-        }
-
-        .carousel-slide {
-            flex-shrink: 0;
-            width: 350px;
-            height: 250px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .carousel-slide:hover {
-            transform: scale(1.03);
-            border-color: #ffd700;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        /* Carousel keyframes */
 
         @keyframes scroll-left {
             0% {
@@ -202,20 +183,6 @@
             }
             100% {
                 transform: translateX(-50%);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .carousel-slide {
-                width: 280px;
-                height: 200px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .carousel-slide {
-                width: 240px;
-                height: 170px;
             }
         }
 
@@ -438,15 +405,7 @@
     </header>
 
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="club-badge"><img class="club-img" src='./illistrinnew2.png' /></div>
-            <h1>Illistrin FC</h1>
-            <p class="hero-subtitle">Welcome to the official website of Illistrin Football Club</p>
-        </div>
-    </section>
-
-    <section class="carousel-section">
-        <div class="carousel-track-wrapper">
+        <div class="hero-carousel">
             <div class="carousel-track" id="carouselTrack">
                 <div class="carousel-slide"><img src="images2/1 FrontPage 1.png" alt="Illistrin FC"></div>
                 <div class="carousel-slide"><img src="images2/2. FrontPageImage 1.png" alt="Illistrin FC"></div>
@@ -457,6 +416,11 @@
                 <div class="carousel-slide"><img src="images2/7. Old Team.jpeg" alt="Old Team"></div>
                 <div class="carousel-slide"><img src="images2/8. kernans.jpg" alt="Kernans"></div>
             </div>
+        </div>
+        <div class="hero-content">
+            <div class="club-badge"><img class="club-img" src='./illistrinnew2.png' /></div>
+            <h1>Illistrin FC</h1>
+            <p class="hero-subtitle">Welcome to the official website of Illistrin Football Club</p>
         </div>
     </section>
 
