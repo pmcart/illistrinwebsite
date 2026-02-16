@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illistrin FC - Club Stories</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700 0%, #ffed4e 100%);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "\26BD";
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,215,0,0.1)"/></svg>');
+            background-size: 50px 50px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .club-badge {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 2rem auto;
+        }
+
+        .club-img {
+            width: 200px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 2px;
+        }
+
+        /* Blog Entries */
+        .blog-entry {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            overflow: hidden;
+            border-top: 4px solid #ffd700;
+        }
+
+        .blog-entry-header {
+            padding: 2rem 2.5rem 1rem;
+        }
+
+        .blog-entry-header h2 {
+            font-size: 1.6rem;
+            color: #1a1a1a;
+            margin-bottom: 0.3rem;
+        }
+
+        .blog-author {
+            color: #888;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        .blog-entry-body {
+            padding: 0 2.5rem 2rem;
+        }
+
+        .blog-entry-body p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .blog-entry-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0 2.5rem 1.5rem;
+        }
+
+        .blog-toggle-btn {
+            background: none;
+            border: none;
+            color: #1a1a1a;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .blog-toggle-btn:hover {
+            color: #b8960e;
+        }
+
+        .blog-collapse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .blog-collapse.open {
+            max-height: 3000px;
+        }
+
+        .blog-preview-text {
+            padding: 0 2.5rem 1rem;
+        }
+
+        .blog-preview-text p {
+            color: #444;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 1.5rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .club-badge {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5rem;
+            }
+
+            .blog-entry-header {
+                padding: 1.5rem 1.5rem 0.5rem;
+            }
+
+            .blog-preview-text,
+            .blog-entry-body,
+            .blog-entry-toggle {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-accent"></div>
+        <nav>
+            <a href="#" class="logo">Illistrin FC</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="blog.html">Club Stories</a></li>
+                <li><a href="media.html">In the Media</a></li>
+                <li><a href="teams.html">Teams - 2025</a></li>
+                <li><a href="policies.html">Policies and Procedures</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="club-badge"><img class="club-img" src='./illistrinnew2.png' /></div>
+            <h1>Club Stories</h1>
+            <p class="hero-subtitle">Memories and milestones from the people who built Illistrin FC</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="section">
+            <div class="container">
+
+                <!-- Blog Entry 1 -->
+                <div class="blog-entry" id="story1">
+                    <div class="blog-entry-header">
+                        <h2>Illistrin in the 90s - A 20 Year Sentence</h2>
+                        <span class="blog-author">Paddy Carr, Ex Illistrin Coach &amp; Committee Member</span>
+                    </div>
+                    <div class="blog-preview-text">
+                        <p>In February 1998 I called down with our son, John to the pitch at Ballyare where I met Raymond O'Donnell who was managing the U11 Illistrin team, Raymond introduced John to the team and he asked me if I was staying around, I said I was and he asked if I would put out a few cones and that started a very rewarding 20 year relationship with Illistrin Football Club.</p>
+                    </div>
+                    <div class="blog-entry-toggle">
+                        <button class="blog-toggle-btn" onclick="toggleBlog('blog1-body', this)">Read more</button>
+                    </div>
+                    <div class="blog-collapse" id="blog1-body">
+                        <div class="blog-entry-body">
+                            <p>From then on I would assist Raymond with the team.</p>
+                            <p>In those days you were very much on your own, the Manager had to organise the game, line the pitch, put up the nets, organise the referee, who was usually someone you knew who would give up an hour to ref a game, very few official referees available.</p>
+                            <p>For away games you had to organise lifts for the players cramming them into cars.</p>
+                            <p>The kit was jerseys only, in those days we played in Green and Black stripes. The Manager was responsible for washing the jerseys, though some parents would offer now and again.</p>
+                            <p>Our home games would be played on the small grass pitch at Ballyare, now the Astro pitch.</p>
+                            <p>Pitch inspections were decided on the infamous words of the late Terry Leydon, he used to tell us "If it is squishy underfoot, leave it"</p>
+                            <p>Games were organised at training for the weekend, if there was a change you had to ring each child's parent of the change and send word through the school.</p>
+                            <p>At that time we had children from the Ballyare area who attended the local Drumman School, so you had two schools to cover.</p>
+                            <p>As our son John moved up the years, he moved on to the U13 team managed by Peter McGrath, and I found myself helping at both teams as our sons Stephen and Daniel had started with the U11s.</p>
+                            <p>After a year Peter McGrath stood down and Vincent McLaughlin took over. Vincent stayed a year and the post became vacant again and I found myself taking on the role.</p>
+                            <p>Raymond O'Donnell had made a connection with Paul Skinnader who was keen to get involved with some great ideas for developing Illistrin Football Club.</p>
+                            <p>Paul set up a structure to the Club, putting a Committee and Officers in place with a long term goal of fundraising with a plan for Illistrin to acquire its own football pitch.</p>
+                            <p>Some great people got involved making a great contribution to the development of the club, these included, Michael Crossan, Roger Cassidy, Aidan Brennan, Seamus Devine, Peter Cunningham, Stephen Hasson and Paddy McDaid.</p>
+                            <p>As Illistrin was developing the Schoolboy League was developing and a better structure came into place. The introduction of Child Protection Officers and official Referees, although you still had to ring around to get a ref, they weren't appointed by the league.</p>
+                            <p>The introduction of small sided games for younger players.</p>
+                            <p>We had 5 a side tournaments for under 10s at Letterkenny Community Centre and later at the Pin Tavern. These were beneficial and very enjoyable and got the younger players playing and helped to develop the game.</p>
+                            <p>At one tournament at Letterkenny Community Centre, in the early naughties two Illistrin teams took part, the A team defeated a very good Iona Team, with an Oldtown team defeating a very good Ballyraine in the semifinals.</p>
+                            <p>With two unlikely underdogs in the final, it was a great boost of morale for the teams. Illistrin came out on top in the final.</p>
+                            <p>At times our teams struggled for numbers even though we had two schools and sometimes you would be playing with only the eleven players. We suffered, like a lot of teams, with Gaelic football attracting the players.</p>
+                            <p>Persistence paid out, the numbers started to grow and eventually Illistrin started to challenge the big teams in the league.</p>
+                            <p>Illistrin teams have gone from strength to strength and soon started winning leagues and cups.</p>
+                            <p>I moved up with the team with the introduction on an U16 team, Seamus Devine came in at U14s.</p>
+                            <p>With numbers growing we introduced a second U16 Team who played in the B league, who went on to win the B League Cup against Swilly Rovers.</p>
+                            <p>Seamus Devine and myself got together to run an U18 team in the Youth League, a team which featured Shane Blaney who went on to making a career across channel.</p>
+                            <p>Illistrin teams went on to win Ulster at both U14 and U16.</p>
+                            <p>Credit is due to the parents of these wonderful children with whom it was a pleasure to be involved with.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Entry 2 -->
+                <div class="blog-entry" id="story2">
+                    <div class="blog-entry-header">
+                        <h2>Development Plans and a New Home</h2>
+                        <span class="blog-author">Paul Skinnader, Ex Illistrin Coach and Committee Member</span>
+                    </div>
+                    <div class="blog-preview-text">
+                        <p>In the mid to late 2000s, numbers joining the Club steadily grew. The Committee were enthusiastic about the potential for the Club but it was not possible to just rely on goodwill for training nor on the Ballyare pitch to train and play our games. A plan was needed to understand what might be possible in terms of the Club's own facilities.</p>
+                    </div>
+                    <div class="blog-entry-toggle">
+                        <button class="blog-toggle-btn" onclick="toggleBlog('blog2-body', this)">Read more</button>
+                    </div>
+                    <div class="blog-collapse" id="blog2-body">
+                        <div class="blog-entry-body">
+                            <p>Yes, it was time for a Development Plan. And with external facilitation (by Clare McDonough) the Committee met night after night over a number of months to work through what was realistic and achievable, as well as being ambitious for the future. Such commitment by so many to develop that plan. And whilst the plan focused on the 'kids' and 'football' and 'coaching' the key question was where our home pitch would be.</p>
+                            <p>It was opportune that the principal of Scoil Naomh Fiachra, Mr. Tom Feeney was very supportive of our plans. Without him and the support of the board of management none of the plans would ever have seen the light of day. It was obvious it would be a 'win-win' for the Club and the school.</p>
+                            <p>First up were astro training pitches and the Committee were instrumental in fundraising for these. Huge effort was made by so many and again with the support of the school. Again, all the necessary arrangements were facilitated to make this happen. What you see now is the outcome of a huge community drive to make available state of the art training facilities. An unbelievable group of local people.</p>
+                            <p>But the question of our Home Pitch remained. Once again the Committee with the school looked at options and decided to approach a local landowner who agreed to sell. Funding was sought through a European Programme which supported community ventures such as the pitch and further Club fundraising filled the gap. Again a huge community effort to secure the pitch that the Club have today.</p>
+                            <p>Having the astro pitch and Home Pitch were important to secure the future of the Club. The task was huge but the drive and determination of the Committee never wavered. The Development Plan put structure on the Club and lay very strong foundations for coaching, child protection, financing etc. It was an important bringing together of so many skills and experience by volunteers on the Committee to providing our kids the opportunity to play soccer.</p>
+                            <p>I am indebted to the Committee for those great years, for the craic, the endless meetings, the fundraising, the drive to professionalism in what we do and to making some great friends.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Entry 3 -->
+                <div class="blog-entry" id="story3">
+                    <div class="blog-entry-header">
+                        <h2>Illistrin FC Today in 2025 - Players, Coaches, Teams and Competitions</h2>
+                        <span class="blog-author">Ciaran McElwaine, Current Illistrin Coach and Club Secretary</span>
+                    </div>
+                    <div class="blog-preview-text">
+                        <p>As we look ahead to the 2026 season, Illistrin FC continues to go from strength to strength. The club's success is firmly rooted in the foundations laid over many years, from modest beginnings to teams now competing on the national stage.</p>
+                    </div>
+                    <div class="blog-entry-toggle">
+                        <button class="blog-toggle-btn" onclick="toggleBlog('blog3-body', this)">Read more</button>
+                    </div>
+                    <div class="blog-collapse" id="blog3-body">
+                        <div class="blog-entry-body">
+                            <p>The work carried out from the time of Fr. Ciaran Mc Ateer, through Terry Leyden, and on to the more recent successes of teams led by Seamus Devine, Dermot McGuinness, Paddy McDaid and many others, has helped establish Illistrin FC as a respected club with a strong reputation for high standards and a clear focus on excellence.</p>
+                            <p>This success is closely linked to the top-class facilities available in Illistrin, along with the strong structures in place within the club that allow us to cater for our growing number of teams. We also rely heavily on Ballyare, and through Terry Leydon's legacy we are main tenants at their facility, enjoying a positive and cooperative working relationship.</p>
+                            <p>Our facility at Corry Park hosted 104 matches during the 2025 season. The first was played on 15th March, an SFAI fixture against Cork side Wilton FC, with the final game of the year taking place on 29th November, a U12 match against local rivals Letterkenny Rovers.</p>
+                            <p>In 2025, we fielded boys' teams at every age group from U7 to U10, along with five U12 teams, four U14 teams and one U16 team. The demand on our playing facilities is significant. When combined with our girls' teams - U10, two U12 teams, U14 and U16 - this often results in up to four matches being played at Corry Park on a Saturday.</p>
+                            <p>Looking ahead to 2026, we hope to add an additional U14 girls' team, two further U16 teams, and, for the first time in the club's history, enter the Donegal Youth League. This will bring our total number of teams and groups to 22.</p>
+                            <p>Player numbers have remained consistent, with a total of 330 registered playing members, comprising 242 boys and 88 girls.</p>
+                            <p>While the foundations laid by past stalwarts set high standards both on and off the pitch, it is clear that the current group of players and coaches continue to enhance the club's standing through their commitment and performances.</p>
+                            <p>Both our U12 girls and U14 boys reached the latter stages of the SFAI National Trophy in 2025, keeping Illistrin FC prominent on the national stage. Many of our players, both male and female, have also enjoyed success with Donegal schoolboy and schoolgirl teams and with Finn Harps development squads. Former player Adam McDaid most recently marked this pathway by making his senior debut.</p>
+                            <p>Each year, the club continues to work hard to maintain and improve standards, ensuring that Illistrin FC remains at the forefront of promoting football opportunities for both boys and girls in the years ahead.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#safeguarding">Safeguarding</a>
+                <a href="#downloads">Downloads</a>
+                <a href="#links">Useful Links</a>
+                <a href="#privacy">Privacy Policy</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Illistrin FC - All rights reserved</p>
+                <p>Proudly serving the football community in Donegal, Ireland</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle blog expand/collapse
+        function toggleBlog(id, btn) {
+            const body = document.getElementById(id);
+            body.classList.toggle('open');
+            btn.textContent = body.classList.contains('open') ? 'Read less' : 'Read more';
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

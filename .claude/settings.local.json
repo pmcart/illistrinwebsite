@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(file:*)",
+      "Bash(python:*)",
+      "Bash(py --version)",
+      "Bash(/c/Users/paddy/AppData/Local/Programs/Python/Python*/python.exe)",
+      "Bash(ls:*)",
+      "Bash(powershell -NoProfile -Command '\nAdd-Type -Assembly System.IO.Compression.FileSystem\n$file = \"\"c:\\\\Dev\\\\IllistrinWeb\\\\illistrinwebsite-main\\\\blogs\\\\Paul Skinnader - Development plans and a new home.docx\"\"\n$tempDir = \"\"$env:TEMP\\\\docx_extract_2\"\"\nif \\(Test-Path $tempDir\\) { Remove-Item -Recurse -Force $tempDir }\nNew-Item -ItemType Directory -Path $tempDir | Out-Null\n[System.IO.Compression.ZipFile]::ExtractToDirectory\\($file, $tempDir\\)\n[xml]$doc = Get-Content \\(Join-Path $tempDir \"\"word\\\\document.xml\"\"\\) -Encoding UTF8\n$ns = New-Object System.Xml.XmlNamespaceManager\\($doc.NameTable\\)\n$ns.AddNamespace\\(\"\"w\"\", \"\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"\"\\)\n$paragraphs = $doc.SelectNodes\\(\"\"//w:p\"\", $ns\\)\nforeach \\($p in $paragraphs\\) {\n    $texts = $p.SelectNodes\\(\"\".//w:t\"\", $ns\\)\n    $line = \"\"\"\"\n    foreach \\($t in $texts\\) { $line += $t.InnerText }\n    Write-Output $line\n}\nRemove-Item -Recurse -Force $tempDir\n')",
+      "Bash(powershell -NoProfile -Command:*)"
+    ]
+  }
+}
