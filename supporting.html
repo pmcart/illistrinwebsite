@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illistrin FC - Supporting the Club</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700 0%, #ffed4e 100%);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.0rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "⚽";
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 2px;
+        }
+
+        .content-block {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid #ffd700;
+        }
+
+        .content-block p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .content-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-block ul {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin: 1rem 0 1rem 1.5rem;
+        }
+
+        .content-block ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 1.5rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .content-block {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .page-header {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <script src="nav.js"></script>
+
+    <section class="page-header">
+        <h1>Supporting the Club</h1>
+        <p>Help Illistrin FC continue to grow and thrive</p>
+    </section>
+
+    <main>
+        <section class="section">
+            <div class="container">
+
+                <!-- Fundraising -->
+                <div class="content-block">
+                    <h2 class="section-title">Fundraising</h2>
+                    <p>Illistrin FC relies on the generous support of our community to keep the club running and to continue providing quality football opportunities for children and young people in the Letterkenny area. Fundraising is essential to maintaining our facilities at Corry Park, purchasing equipment, and supporting our teams across all age groups.</p>
+                    <p>Throughout the year, the club organises a number of fundraising initiatives including:</p>
+                    <ul>
+                        <li>Annual club lotto</li>
+                        <li>Race nights and table quizzes</li>
+                        <li>Bag packing and community collections</li>
+                        <li>Sponsored events and challenges</li>
+                        <li>Kit and jersey sponsorship opportunities</li>
+                    </ul>
+                    <p>If you or your business would like to support Illistrin FC through sponsorship or donations, please get in touch via our <a href="contacts.html">Contacts page</a>. Every contribution, no matter how big or small, makes a real difference to the young players of our club.</p>
+                </div>
+
+                <!-- Volunteering -->
+                <div class="content-block">
+                    <h2 class="section-title">Volunteering</h2>
+                    <p>Illistrin FC is run entirely by dedicated volunteers who give their time to ensure that over 300 young players can enjoy football in a safe, fun and supportive environment. With over 50 volunteers across the club, there are always opportunities to get involved.</p>
+                    <p>Whether you have experience in coaching, administration, event organisation, or simply want to lend a hand on match days, we would love to hear from you. Volunteering roles include:</p>
+                    <ul>
+                        <li>Coaching and team management</li>
+                        <li>Match day assistance and coordination</li>
+                        <li>Fundraising and events support</li>
+                        <li>Pitch and facilities maintenance</li>
+                        <li>Committee and administration roles</li>
+                    </ul>
+                    <p>All volunteers working with children are required to be Garda vetted and complete relevant safeguarding training in line with FAI policy. The club provides full support through this process.</p>
+                    <p>Interested in volunteering? Reach out to us via the <a href="contacts.html">Contacts page</a> and we'll get you started.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

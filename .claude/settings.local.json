@@ -7,7 +7,13 @@
       "Bash(/c/Users/paddy/AppData/Local/Programs/Python/Python*/python.exe)",
       "Bash(ls:*)",
       "Bash(powershell -NoProfile -Command '\nAdd-Type -Assembly System.IO.Compression.FileSystem\n$file = \"\"c:\\\\Dev\\\\IllistrinWeb\\\\illistrinwebsite-main\\\\blogs\\\\Paul Skinnader - Development plans and a new home.docx\"\"\n$tempDir = \"\"$env:TEMP\\\\docx_extract_2\"\"\nif \\(Test-Path $tempDir\\) { Remove-Item -Recurse -Force $tempDir }\nNew-Item -ItemType Directory -Path $tempDir | Out-Null\n[System.IO.Compression.ZipFile]::ExtractToDirectory\\($file, $tempDir\\)\n[xml]$doc = Get-Content \\(Join-Path $tempDir \"\"word\\\\document.xml\"\"\\) -Encoding UTF8\n$ns = New-Object System.Xml.XmlNamespaceManager\\($doc.NameTable\\)\n$ns.AddNamespace\\(\"\"w\"\", \"\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"\"\\)\n$paragraphs = $doc.SelectNodes\\(\"\"//w:p\"\", $ns\\)\nforeach \\($p in $paragraphs\\) {\n    $texts = $p.SelectNodes\\(\"\".//w:t\"\", $ns\\)\n    $line = \"\"\"\"\n    foreach \\($t in $texts\\) { $line += $t.InnerText }\n    Write-Output $line\n}\nRemove-Item -Recurse -Force $tempDir\n')",
-      "Bash(powershell -NoProfile -Command:*)"
+      "Bash(powershell -NoProfile -Command:*)",
+      "Bash(for f in about.html blog.html media.html teams.html policies.html contacts.html safeguarding.html calendar.html coaches.html news.html)",
+      "Bash(do sed -i '/^    <header>/,/^    <\\\\/header>/{ /^    <header>/c\\\\    <header></header>\\\\n    <script src=\"\"nav.js\"\"></script>\n/^    <\\\\/header>/!d\n/^    <\\\\/header>/d\n}' \"$f\")",
+      "Bash(done)",
+      "Bash(do sed -i '/^    <footer>/,/^    <\\\\/footer>/{ /^    <footer>/c\\\\    <footer></footer>\n/^    <\\\\/footer>/!d\n/^    <\\\\/footer>/d\n}' \"$f\")",
+      "Bash(node -e:*)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \"C:\\\\Dev\\\\IllistrinWeb\\\\illistrinwebsite\\\\extract.ps1\")"
     ]
   }
 }

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illistrin FC - Child Safeguarding</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700 0%, #ffed4e 100%);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.0rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "⚽";
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 2px;
+        }
+
+        .content-block {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid #ffd700;
+        }
+
+        .content-block p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .content-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .document-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            background: #fff8dc;
+            border: 2px solid #ffd700;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+
+        .document-link:hover {
+            background: #ffd700;
+            color: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        .document-link::before {
+            content: "📄";
+            font-size: 1.1rem;
+        }
+
+        .documents-list {
+            margin-top: 2rem;
+        }
+
+        .documents-list h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 1.5rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .content-block {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .page-header {
+                padding: 2rem 1rem;
+            }
+
+            .document-link {
+                display: flex;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <script src="nav.js"></script>
+
+    <section class="page-header">
+        <h1>Child Safeguarding</h1>
+    </section>
+
+    <main>
+        <section class="section">
+            <div class="container">
+
+                <!-- Child Safeguarding Statement -->
+                <div class="content-block">
+                    <h2 class="section-title">Child Safeguarding Statement</h2>
+                    <p>Illistrin FC in accordance with the FAI Rulebook, FAI Child Welfare and Safeguarding policy, other FAI policies, procedures and our legislative requirements have agreed this Child Safeguarding Statement which is binding on all members. Illistrin FC is a Football Club operating on a local scale providing sporting activities and opportunities for children and young people through participation in clubs. The Club offers sporting activities to children and young people from the age of 5 to 18. Illistrin FC recruits over 50 volunteers with over 300 participants. Illistrin FC is committed to safeguarding children and by working under the guidance of our Safeguarding Policies and procedures, our staff, both volunteers and employed working with our children and young people, throughout the club, seek to create a safe and fun environment for children and young people to participate in their sport.</p>
+                    <div class="documents-list">
+                        <a href="safeguarding/1 Child Safeguarding Statement IFC 2025.pdf" class="document-link" target="_blank">Child Safeguarding Statement</a>
+                        <a href="safeguarding/4 FAI Child Welfare Safeguarding Policy.pdf" class="document-link" target="_blank">FAI Child Welfare Safeguarding Policy</a>
+                    </div>
+                </div>
+
+                <!-- Principles to Safeguard Children from Harm -->
+                <div class="content-block">
+                    <h2 class="section-title">Principles to Safeguard Children from Harm</h2>
+                    <p>This statement recognises that in accordance with legislation and the requirements of FAI Rulebook, FAI Child Welfare and Safeguarding policy, other FAI policies and procedures that the welfare and interests of children are paramount in all circumstances. Illistrin FC is established on a number of core principles: the needs of the Child, integrity and respect, environment, equality, fair play, welfare and safety in football. These underlying principles underpin our rules, policies and procedures to ensure that when Children participating in our activities, they do so, as far as is practicable, in a safe and enjoyable environment.</p>
+                    <div class="documents-list">
+                        <a href="safeguarding/5 FAI Concern-Complaint Procedure.pdf" class="document-link" target="_blank">FAI Concern - Complaint Procedure</a>
+                    </div>
+                </div>
+
+                <!-- Risk Assessment -->
+                <div class="content-block">
+                    <h2 class="section-title">Risk Assessment</h2>
+                    <p>In preparing this statement the Club have completed a Risk Assessment of the potential risk of harm to children when they are participating in any of our games and attending our activities. The risks were reviewed under the following headings; Club and Coaching Practices; Complaints &amp; Discipline; Reporting Procedures; Use of Facilities; Recruitment; Communications; and General Risk of Harm. The table below lists the area of Risk identified and the list of procedures and policies for managing these risks.</p>
+                    <div class="documents-list">
+                        <a href="safeguarding/2. Risk Assessment- ILLISTRIN FC 01-OCT-2025 (1).pdf" class="document-link" target="_blank">Illistrin FC Safeguarding Risk Assessment</a>
+                    </div>
+                </div>
+
+                <!-- Additional Documents -->
+                <div class="content-block">
+                    <h2 class="section-title">Safeguarding Documents</h2>
+                    <p>All safeguarding documents are available for download below.</p>
+                    <div class="documents-list">
+                        <a href="safeguarding/1 Child Safeguarding Statement IFC 2025.pdf" class="document-link" target="_blank">Child Safeguarding Statement IFC 2025</a>
+                        <a href="safeguarding/2. Risk Assessment- ILLISTRIN FC 01-OCT-2025 (1).pdf" class="document-link" target="_blank">Risk Assessment - Illistrin FC</a>
+                        <a href="safeguarding/3 Illistrin Football Club Safeguarding Handbook.pdf" class="document-link" target="_blank">Illistrin FC Safeguarding Handbook</a>
+                        <a href="safeguarding/4 FAI Child Welfare Safeguarding Policy.pdf" class="document-link" target="_blank">FAI Child Welfare Safeguarding Policy</a>
+                        <a href="safeguarding/5 FAI Concern-Complaint Procedure.pdf" class="document-link" target="_blank">FAI Concern - Complaint Procedure</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

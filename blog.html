@@ -176,22 +176,61 @@
             border-radius: 2px;
         }
 
+        /* Era Sections */
+        .era-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 1.5rem 2.5rem;
+            border-radius: 15px 15px 0 0;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .era-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700 0%, #ffed4e 100%);
+        }
+
+        .era-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .era-header p {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
+        }
+
+        .era-body {
+            background: #f0f0f0;
+            border-radius: 0 0 15px 15px;
+            padding: 2rem;
+            margin-bottom: 1rem;
+        }
+
         /* Blog Entries */
         .blog-entry {
             background: white;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             overflow: hidden;
-            border-top: 4px solid #ffd700;
+            border-left: 5px solid #ffd700;
         }
 
         .blog-entry-header {
             padding: 2rem 2.5rem 1rem;
         }
 
-        .blog-entry-header h2 {
-            font-size: 1.6rem;
+        .blog-entry-header h3 {
+            font-size: 1.5rem;
             color: #1a1a1a;
             margin-bottom: 0.3rem;
         }
@@ -243,7 +282,7 @@
         }
 
         .blog-collapse.open {
-            max-height: 3000px;
+            max-height: 5000px;
         }
 
         .blog-preview-text {
@@ -254,6 +293,17 @@
             color: #444;
             line-height: 1.8;
             font-size: 1.05rem;
+        }
+
+        .coming-soon {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem 2.5rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid #ddd;
+            color: #999;
+            font-style: italic;
+            font-size: 1rem;
         }
 
         /* Footer */
@@ -319,6 +369,18 @@
                 font-size: 2.5rem;
             }
 
+            .era-header {
+                padding: 1.2rem 1.5rem;
+            }
+
+            .era-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .era-body {
+                padding: 1.5rem;
+            }
+
             .blog-entry-header {
                 padding: 1.5rem 1.5rem 0.5rem;
             }
@@ -344,21 +406,8 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-accent"></div>
-        <nav>
-            <a href="#" class="logo">Illistrin FC</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="blog.html">Club Stories</a></li>
-                <li><a href="media.html">In the Media</a></li>
-                <li><a href="teams.html">Teams - 2025</a></li>
-                <li><a href="policies.html">Policies and Procedures</a></li>
-                <li><a href="contacts.html">Contacts</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header></header>
+    <script src="nav.js"></script>
 
     <section class="hero" id="home">
         <div class="hero-content">
@@ -372,119 +421,176 @@
         <section class="section">
             <div class="container">
 
-                <!-- Blog Entry 1 -->
-                <div class="blog-entry" id="story1">
-                    <div class="blog-entry-header">
-                        <h2>Illistrin in the 90s - A 20 Year Sentence</h2>
-                        <span class="blog-author">Paddy Carr, Ex Illistrin Coach &amp; Committee Member</span>
-                    </div>
-                    <div class="blog-preview-text">
-                        <p>In February 1998 I called down with our son, John to the pitch at Ballyare where I met Raymond O'Donnell who was managing the U11 Illistrin team, Raymond introduced John to the team and he asked me if I was staying around, I said I was and he asked if I would put out a few cones and that started a very rewarding 20 year relationship with Illistrin Football Club.</p>
-                    </div>
-                    <div class="blog-entry-toggle">
-                        <button class="blog-toggle-btn" onclick="toggleBlog('blog1-body', this)">Read more</button>
-                    </div>
-                    <div class="blog-collapse" id="blog1-body">
-                        <div class="blog-entry-body">
-                            <p>From then on I would assist Raymond with the team.</p>
-                            <p>In those days you were very much on your own, the Manager had to organise the game, line the pitch, put up the nets, organise the referee, who was usually someone you knew who would give up an hour to ref a game, very few official referees available.</p>
-                            <p>For away games you had to organise lifts for the players cramming them into cars.</p>
-                            <p>The kit was jerseys only, in those days we played in Green and Black stripes. The Manager was responsible for washing the jerseys, though some parents would offer now and again.</p>
-                            <p>Our home games would be played on the small grass pitch at Ballyare, now the Astro pitch.</p>
-                            <p>Pitch inspections were decided on the infamous words of the late Terry Leydon, he used to tell us "If it is squishy underfoot, leave it"</p>
-                            <p>Games were organised at training for the weekend, if there was a change you had to ring each child's parent of the change and send word through the school.</p>
-                            <p>At that time we had children from the Ballyare area who attended the local Drumman School, so you had two schools to cover.</p>
-                            <p>As our son John moved up the years, he moved on to the U13 team managed by Peter McGrath, and I found myself helping at both teams as our sons Stephen and Daniel had started with the U11s.</p>
-                            <p>After a year Peter McGrath stood down and Vincent McLaughlin took over. Vincent stayed a year and the post became vacant again and I found myself taking on the role.</p>
-                            <p>Raymond O'Donnell had made a connection with Paul Skinnader who was keen to get involved with some great ideas for developing Illistrin Football Club.</p>
-                            <p>Paul set up a structure to the Club, putting a Committee and Officers in place with a long term goal of fundraising with a plan for Illistrin to acquire its own football pitch.</p>
-                            <p>Some great people got involved making a great contribution to the development of the club, these included, Michael Crossan, Roger Cassidy, Aidan Brennan, Seamus Devine, Peter Cunningham, Stephen Hasson and Paddy McDaid.</p>
-                            <p>As Illistrin was developing the Schoolboy League was developing and a better structure came into place. The introduction of Child Protection Officers and official Referees, although you still had to ring around to get a ref, they weren't appointed by the league.</p>
-                            <p>The introduction of small sided games for younger players.</p>
-                            <p>We had 5 a side tournaments for under 10s at Letterkenny Community Centre and later at the Pin Tavern. These were beneficial and very enjoyable and got the younger players playing and helped to develop the game.</p>
-                            <p>At one tournament at Letterkenny Community Centre, in the early naughties two Illistrin teams took part, the A team defeated a very good Iona Team, with an Oldtown team defeating a very good Ballyraine in the semifinals.</p>
-                            <p>With two unlikely underdogs in the final, it was a great boost of morale for the teams. Illistrin came out on top in the final.</p>
-                            <p>At times our teams struggled for numbers even though we had two schools and sometimes you would be playing with only the eleven players. We suffered, like a lot of teams, with Gaelic football attracting the players.</p>
-                            <p>Persistence paid out, the numbers started to grow and eventually Illistrin started to challenge the big teams in the league.</p>
-                            <p>Illistrin teams have gone from strength to strength and soon started winning leagues and cups.</p>
-                            <p>I moved up with the team with the introduction on an U16 team, Seamus Devine came in at U14s.</p>
-                            <p>With numbers growing we introduced a second U16 Team who played in the B league, who went on to win the B League Cup against Swilly Rovers.</p>
-                            <p>Seamus Devine and myself got together to run an U18 team in the Youth League, a team which featured Shane Blaney who went on to making a career across channel.</p>
-                            <p>Illistrin teams went on to win Ulster at both U14 and U16.</p>
-                            <p>Credit is due to the parents of these wonderful children with whom it was a pleasure to be involved with.</p>
+                <!-- ========== ERA 1: Mid 1970s - Early 90s ========== -->
+                <div class="era-header">
+                    <h2>Mid 1970s - Early 1990s</h2>
+                    <p>The founding years and early days of the club</p>
+                </div>
+                <div class="era-body">
+
+                    <!-- Tom McGinty -->
+                    <div class="blog-entry" id="story-mcginty">
+                        <div class="blog-entry-header">
+                            <h3>Illistrin Schoolboys Football - The Early Years</h3>
+                            <span class="blog-author">Tom McGinty, Founding Member &amp; Manager</span>
+                        </div>
+                        <div class="blog-preview-text">
+                            <p>Schoolboy soccer started in Illistrin in 1976 where they competed in the league in the early years, but it was 1981 where the club as we know today found its roots. It was at community games trials at the community centre that a few Mountain Top lads met Dick Duffy who asked where were from and did we play football.</p>
+                        </div>
+                        <div class="blog-entry-toggle">
+                            <button class="blog-toggle-btn" onclick="toggleBlog('mcginty-body', this)">Read more</button>
+                        </div>
+                        <div class="blog-collapse" id="mcginty-body">
+                            <div class="blog-entry-body">
+                                <p>From there we went home, quietly mentioned to our parents and it was decided to enter an Under 13 side in the league. Our pick of players came from the Illistrin school boundary from the Blue Banks to Ballyare to the new Letterkenny Hospital which opened around that time.</p>
+                                <p>No pitch, No jerseys. No training we quickly got a pitch in Calhame where the Sullivans built a house in later years, trained in Corry's field after school and played in white tee shirts for the first 2 weeks until George Boal sponsored the full purple and blue West Ham style jerseys and a football.</p>
+                                <p>The parents of the area got really involved at that time. A lot of people were involved at the start getting the pitch ready and we had good crowds at our matches.</p>
+                                <p>We were in a league with Ballyraine, Main Street, Iona, Lurgybrack, Oldtown A, Oldtown B, Glencar A, Glencar B. and the pitches including our own you played uphill or downhill and realistically Glencar B and Oldtown B were at our level. Letterkenny was different back then with Illistrin and Lurgybrack schools both having under 100 students and small picks of players for our managers Tom Mc Ginty &amp; Terry Leydon to choose from. We were near the bottom of the table and stayed there for the season.</p>
+                                <p>Football clubs didn't run themselves and fundraising in the early days was a silver circle and the Saturday night 25 card game in Illistrin School.</p>
+                                <p>In the off season the boys and girls in the area continued to run for Finn Valley under Pat Hegarty and Hughie Ward and in 1982 St Euna's Gaa club started a Sunday league where you played across the pitch. Phil Brogan, Hughie Mc Gee, Seamus Diver and Liam Mc Eldowney managed the Gaa side and Joe Winston taught us the basic skills in the beginning.</p>
+                                <p>In Season 2 and Under 11, 13. 15 sides were entered and our boundary expanded to bring in the Kilmacrennan and Ballyare and almost into Milford and this helped attract more players. This season introduced us to new teams Drumkeen, Raphoe, Newtown and Ballybofey who played their home games in Finn Park.</p>
+                                <p>In the early years the pitch was relocated across the road to where Bracken Lea is now, to Bradleys field in Carnamuggagh, to Corry's field, Ballyare before coming back to Corry Park which now is a fine development for the community, school and the club and it retains the community spirit that the club was founded on to cater for the youth in the area.</p>
+                                <p>Over time results got better, players improved, they added some silverware, the community remained involved, former players became coaches, managers and committee and club members and new people moved into the area and became involved with the now boys and girl's teams and the club are making a big impact locally and nationally and are at place which could not have been thought of after an 11-0 closely contested match against Glencar in 1981.</p>
+                                <p>I often wonder that if my father had said after us telling him about our conversation with Dick Duffy that I have no car, no pitch etc what have become of Illistrin FC at that time, but I am sure my mother sent him next door to Terry Leydon and they in turn got a community involved in the club. They did not do it alone and had great help from our neighbours and the locality and early sponsors George Boal, Michael Dunne and John Joe Foy.</p>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Coming Soon -->
+                    <div class="coming-soon">
+                        More stories coming soon: Derek Lydon (Player 1982-86), Karl Sweeney (Current PRO), Declan Kerr
+                    </div>
+
                 </div>
 
-                <!-- Blog Entry 2 -->
-                <div class="blog-entry" id="story2">
-                    <div class="blog-entry-header">
-                        <h2>Development Plans and a New Home</h2>
-                        <span class="blog-author">Paul Skinnader, Ex Illistrin Coach and Committee Member</span>
-                    </div>
-                    <div class="blog-preview-text">
-                        <p>In the mid to late 2000s, numbers joining the Club steadily grew. The Committee were enthusiastic about the potential for the Club but it was not possible to just rely on goodwill for training nor on the Ballyare pitch to train and play our games. A plan was needed to understand what might be possible in terms of the Club's own facilities.</p>
-                    </div>
-                    <div class="blog-entry-toggle">
-                        <button class="blog-toggle-btn" onclick="toggleBlog('blog2-body', this)">Read more</button>
-                    </div>
-                    <div class="blog-collapse" id="blog2-body">
-                        <div class="blog-entry-body">
-                            <p>Yes, it was time for a Development Plan. And with external facilitation (by Clare McDonough) the Committee met night after night over a number of months to work through what was realistic and achievable, as well as being ambitious for the future. Such commitment by so many to develop that plan. And whilst the plan focused on the 'kids' and 'football' and 'coaching' the key question was where our home pitch would be.</p>
-                            <p>It was opportune that the principal of Scoil Naomh Fiachra, Mr. Tom Feeney was very supportive of our plans. Without him and the support of the board of management none of the plans would ever have seen the light of day. It was obvious it would be a 'win-win' for the Club and the school.</p>
-                            <p>First up were astro training pitches and the Committee were instrumental in fundraising for these. Huge effort was made by so many and again with the support of the school. Again, all the necessary arrangements were facilitated to make this happen. What you see now is the outcome of a huge community drive to make available state of the art training facilities. An unbelievable group of local people.</p>
-                            <p>But the question of our Home Pitch remained. Once again the Committee with the school looked at options and decided to approach a local landowner who agreed to sell. Funding was sought through a European Programme which supported community ventures such as the pitch and further Club fundraising filled the gap. Again a huge community effort to secure the pitch that the Club have today.</p>
-                            <p>Having the astro pitch and Home Pitch were important to secure the future of the Club. The task was huge but the drive and determination of the Committee never wavered. The Development Plan put structure on the Club and lay very strong foundations for coaching, child protection, financing etc. It was an important bringing together of so many skills and experience by volunteers on the Committee to providing our kids the opportunity to play soccer.</p>
-                            <p>I am indebted to the Committee for those great years, for the craic, the endless meetings, the fundraising, the drive to professionalism in what we do and to making some great friends.</p>
+                <!-- ========== ERA 2: Early 1990s - Mid 2010s ========== -->
+                <div class="era-header">
+                    <h2>Early 1990s - Mid 2010s</h2>
+                    <p>Growth, development and building a home</p>
+                </div>
+                <div class="era-body">
+
+                    <!-- Paddy Carr -->
+                    <div class="blog-entry" id="story-carr">
+                        <div class="blog-entry-header">
+                            <h3>Illistrin in the 90s - A 20 Year Sentence</h3>
+                            <span class="blog-author">Paddy Carr, Ex Illistrin Coach &amp; Committee Member</span>
+                        </div>
+                        <div class="blog-preview-text">
+                            <p>In February 1998 I called down with our son, John to the pitch at Ballyare where I met Raymond O'Donnell who was managing the U11 Illistrin team, Raymond introduced John to the team and he asked me if I was staying around, I said I was and he asked if I would put out a few cones and that started a very rewarding 20 year relationship with Illistrin Football Club.</p>
+                        </div>
+                        <div class="blog-entry-toggle">
+                            <button class="blog-toggle-btn" onclick="toggleBlog('carr-body', this)">Read more</button>
+                        </div>
+                        <div class="blog-collapse" id="carr-body">
+                            <div class="blog-entry-body">
+                                <p>From then on I would assist Raymond with the team.</p>
+                                <p>In those days you were very much on your own, the Manager had to organise the game, line the pitch, put up the nets, organise the referee, who was usually someone you knew who would give up an hour to ref a game, very few official referees available.</p>
+                                <p>For away games you had to organise lifts for the players cramming them into cars.</p>
+                                <p>The kit was jerseys only, in those days we played in Green and Black stripes. The Manager was responsible for washing the jerseys, though some parents would offer now and again.</p>
+                                <p>Our home games would be played on the small grass pitch at Ballyare, now the Astro pitch.</p>
+                                <p>Pitch inspections were decided on the infamous words of the late Terry Leydon, he used to tell us "If it is squishy underfoot, leave it"</p>
+                                <p>Games were organised at training for the weekend, if there was a change you had to ring each child's parent of the change and send word through the school.</p>
+                                <p>At that time we had children from the Ballyare area who attended the local Drumman School, so you had two schools to cover.</p>
+                                <p>As our son John moved up the years, he moved on to the U13 team managed by Peter McGrath, and I found myself helping at both teams as our sons Stephen and Daniel had started with the U11s.</p>
+                                <p>After a year Peter McGrath stood down and Vincent McLaughlin took over. Vincent stayed a year and the post became vacant again and I found myself taking on the role.</p>
+                                <p>Raymond O'Donnell had made a connection with Paul Skinnader who was keen to get involved with some great ideas for developing Illistrin Football Club.</p>
+                                <p>Paul set up a structure to the Club, putting a Committee and Officers in place with a long term goal of fundraising with a plan for Illistrin to acquire its own football pitch.</p>
+                                <p>Some great people got involved making a great contribution to the development of the club, these included, Michael Crossan, Roger Cassidy, Aidan Brennan, Seamus Devine, Peter Cunningham, Stephen Hasson and Paddy McDaid.</p>
+                                <p>As Illistrin was developing the Schoolboy League was developing and a better structure came into place. The introduction of Child Protection Officers and official Referees, although you still had to ring around to get a ref, they weren't appointed by the league.</p>
+                                <p>The introduction of small sided games for younger players.</p>
+                                <p>We had 5 a side tournaments for under 10s at Letterkenny Community Centre and later at the Pin Tavern. These were beneficial and very enjoyable and got the younger players playing and helped to develop the game.</p>
+                                <p>At one tournament at Letterkenny Community Centre, in the early naughties two Illistrin teams took part, the A team defeated a very good Iona Team, with an Oldtown team defeating a very good Ballyraine in the semifinals.</p>
+                                <p>With two unlikely underdogs in the final, it was a great boost of morale for the teams. Illistrin came out on top in the final.</p>
+                                <p>At times our teams struggled for numbers even though we had two schools and sometimes you would be playing with only the eleven players. We suffered, like a lot of teams, with Gaelic football attracting the players.</p>
+                                <p>Persistence paid out, the numbers started to grow and eventually Illistrin started to challenge the big teams in the league.</p>
+                                <p>Illistrin teams have gone from strength to strength and soon started winning leagues and cups.</p>
+                                <p>I moved up with the team with the introduction on an U16 team, Seamus Devine came in at U14s.</p>
+                                <p>With numbers growing we introduced a second U16 Team who played in the B league, who went on to win the B League Cup against Swilly Rovers.</p>
+                                <p>Seamus Devine and myself got together to run an U18 team in the Youth League, a team which featured Shane Blaney who went on to making a career across channel.</p>
+                                <p>Illistrin teams went on to win Ulster at both U14 and U16.</p>
+                                <p>Credit is due to the parents of these wonderful children with whom it was a pleasure to be involved with.</p>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Paul Skinnader -->
+                    <div class="blog-entry" id="story-skinnader">
+                        <div class="blog-entry-header">
+                            <h3>Development Plans and a New Home</h3>
+                            <span class="blog-author">Paul Skinnader, Ex Illistrin Coach and Committee Member</span>
+                        </div>
+                        <div class="blog-preview-text">
+                            <p>In the mid to late 2000s, numbers joining the Club steadily grew. The Committee were enthusiastic about the potential for the Club but it was not possible to just rely on goodwill for training nor on the Ballyare pitch to train and play our games. A plan was needed to understand what might be possible in terms of the Club's own facilities.</p>
+                        </div>
+                        <div class="blog-entry-toggle">
+                            <button class="blog-toggle-btn" onclick="toggleBlog('skinnader-body', this)">Read more</button>
+                        </div>
+                        <div class="blog-collapse" id="skinnader-body">
+                            <div class="blog-entry-body">
+                                <p>Yes, it was time for a Development Plan. And with external facilitation (by Clare McDonough) the Committee met night after night over a number of months to work through what was realistic and achievable, as well as being ambitious for the future. Such commitment by so many to develop that plan. And whilst the plan focused on the 'kids' and 'football' and 'coaching' the key question was where our home pitch would be.</p>
+                                <p>It was opportune that the principal of Scoil Naomh Fiachra, Mr. Tom Feeney was very supportive of our plans. Without him and the support of the board of management none of the plans would ever have seen the light of day. It was obvious it would be a 'win-win' for the Club and the school.</p>
+                                <p>First up were astro training pitches and the Committee were instrumental in fundraising for these. Huge effort was made by so many and again with the support of the school. Again, all the necessary arrangements were facilitated to make this happen. What you see now is the outcome of a huge community drive to make available state of the art training facilities. An unbelievable group of local people.</p>
+                                <p>But the question of our Home Pitch remained. Once again the Committee with the school looked at options and decided to approach a local landowner who agreed to sell. Funding was sought through a European Programme which supported community ventures such as the pitch and further Club fundraising filled the gap. Again a huge community effort to secure the pitch that the Club have today.</p>
+                                <p>Having the astro pitch and Home Pitch were important to secure the future of the Club. The task was huge but the drive and determination of the Committee never wavered. The Development Plan put structure on the Club and lay very strong foundations for coaching, child protection, financing etc. It was an important bringing together of so many skills and experience by volunteers on the Committee to providing our kids the opportunity to play soccer.</p>
+                                <p>I am indebted to the Committee for those great years, for the craic, the endless meetings, the fundraising, the drive to professionalism in what we do and to making some great friends.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coming Soon -->
+                    <div class="coming-soon">
+                        More stories coming soon: Paddy McDaid, Seamus Devine
+                    </div>
+
                 </div>
 
-                <!-- Blog Entry 3 -->
-                <div class="blog-entry" id="story3">
-                    <div class="blog-entry-header">
-                        <h2>Illistrin FC Today in 2025 - Players, Coaches, Teams and Competitions</h2>
-                        <span class="blog-author">Ciaran McElwaine, Current Illistrin Coach and Club Secretary</span>
-                    </div>
-                    <div class="blog-preview-text">
-                        <p>As we look ahead to the 2026 season, Illistrin FC continues to go from strength to strength. The club's success is firmly rooted in the foundations laid over many years, from modest beginnings to teams now competing on the national stage.</p>
-                    </div>
-                    <div class="blog-entry-toggle">
-                        <button class="blog-toggle-btn" onclick="toggleBlog('blog3-body', this)">Read more</button>
-                    </div>
-                    <div class="blog-collapse" id="blog3-body">
-                        <div class="blog-entry-body">
-                            <p>The work carried out from the time of Fr. Ciaran Mc Ateer, through Terry Leyden, and on to the more recent successes of teams led by Seamus Devine, Dermot McGuinness, Paddy McDaid and many others, has helped establish Illistrin FC as a respected club with a strong reputation for high standards and a clear focus on excellence.</p>
-                            <p>This success is closely linked to the top-class facilities available in Illistrin, along with the strong structures in place within the club that allow us to cater for our growing number of teams. We also rely heavily on Ballyare, and through Terry Leydon's legacy we are main tenants at their facility, enjoying a positive and cooperative working relationship.</p>
-                            <p>Our facility at Corry Park hosted 104 matches during the 2025 season. The first was played on 15th March, an SFAI fixture against Cork side Wilton FC, with the final game of the year taking place on 29th November, a U12 match against local rivals Letterkenny Rovers.</p>
-                            <p>In 2025, we fielded boys' teams at every age group from U7 to U10, along with five U12 teams, four U14 teams and one U16 team. The demand on our playing facilities is significant. When combined with our girls' teams - U10, two U12 teams, U14 and U16 - this often results in up to four matches being played at Corry Park on a Saturday.</p>
-                            <p>Looking ahead to 2026, we hope to add an additional U14 girls' team, two further U16 teams, and, for the first time in the club's history, enter the Donegal Youth League. This will bring our total number of teams and groups to 22.</p>
-                            <p>Player numbers have remained consistent, with a total of 330 registered playing members, comprising 242 boys and 88 girls.</p>
-                            <p>While the foundations laid by past stalwarts set high standards both on and off the pitch, it is clear that the current group of players and coaches continue to enhance the club's standing through their commitment and performances.</p>
-                            <p>Both our U12 girls and U14 boys reached the latter stages of the SFAI National Trophy in 2025, keeping Illistrin FC prominent on the national stage. Many of our players, both male and female, have also enjoyed success with Donegal schoolboy and schoolgirl teams and with Finn Harps development squads. Former player Adam McDaid most recently marked this pathway by making his senior debut.</p>
-                            <p>Each year, the club continues to work hard to maintain and improve standards, ensuring that Illistrin FC remains at the forefront of promoting football opportunities for both boys and girls in the years ahead.</p>
+                <!-- ========== ERA 3: Mid 2000s - Current Day ========== -->
+                <div class="era-header">
+                    <h2>Mid 2000s - Current Day</h2>
+                    <p>The modern era and where we are today</p>
+                </div>
+                <div class="era-body">
+
+                    <!-- Ciaran McElwaine -->
+                    <div class="blog-entry" id="story-mcelwaine">
+                        <div class="blog-entry-header">
+                            <h3>Illistrin FC Today in 2025 - Players, Coaches, Teams and Competitions</h3>
+                            <span class="blog-author">Ciaran McElwaine, Current Illistrin Coach and Club Secretary</span>
+                        </div>
+                        <div class="blog-preview-text">
+                            <p>As we look ahead to the 2026 season, Illistrin FC continues to go from strength to strength. The club's success is firmly rooted in the foundations laid over many years, from modest beginnings to teams now competing on the national stage.</p>
+                        </div>
+                        <div class="blog-entry-toggle">
+                            <button class="blog-toggle-btn" onclick="toggleBlog('mcelwaine-body', this)">Read more</button>
+                        </div>
+                        <div class="blog-collapse" id="mcelwaine-body">
+                            <div class="blog-entry-body">
+                                <p>The work carried out from the time of Fr. Ciaran Mc Ateer, through Terry Leyden, and on to the more recent successes of teams led by Seamus Devine, Dermot McGuinness, Paddy McDaid and many others, has helped establish Illistrin FC as a respected club with a strong reputation for high standards and a clear focus on excellence.</p>
+                                <p>This success is closely linked to the top-class facilities available in Illistrin, along with the strong structures in place within the club that allow us to cater for our growing number of teams. We also rely heavily on Ballyare, and through Terry Leydon's legacy we are main tenants at their facility, enjoying a positive and cooperative working relationship.</p>
+                                <p>Our facility at Corry Park hosted 104 matches during the 2025 season. The first was played on 15th March, an SFAI fixture against Cork side Wilton FC, with the final game of the year taking place on 29th November, a U12 match against local rivals Letterkenny Rovers.</p>
+                                <p>In 2025, we fielded boys' teams at every age group from U7 to U10, along with five U12 teams, four U14 teams and one U16 team. The demand on our playing facilities is significant. When combined with our girls' teams - U10, two U12 teams, U14 and U16 - this often results in up to four matches being played at Corry Park on a Saturday.</p>
+                                <p>Looking ahead to 2026, we hope to add an additional U14 girls' team, two further U16 teams, and, for the first time in the club's history, enter the Donegal Youth League. This will bring our total number of teams and groups to 22.</p>
+                                <p>Player numbers have remained consistent, with a total of 330 registered playing members, comprising 242 boys and 88 girls.</p>
+                                <p>While the foundations laid by past stalwarts set high standards both on and off the pitch, it is clear that the current group of players and coaches continue to enhance the club's standing through their commitment and performances.</p>
+                                <p>Both our U12 girls and U14 boys reached the latter stages of the SFAI National Trophy in 2025, keeping Illistrin FC prominent on the national stage. Many of our players, both male and female, have also enjoyed success with Donegal schoolboy and schoolgirl teams and with Finn Harps development squads. Former player Adam McDaid most recently marked this pathway by making his senior debut.</p>
+                                <p>Each year, the club continues to work hard to maintain and improve standards, ensuring that Illistrin FC remains at the forefront of promoting football opportunities for both boys and girls in the years ahead.</p>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Coming Soon -->
+                    <div class="coming-soon">
+                        More stories coming soon: Annraoi Cheevers (Club Chairman)
+                    </div>
+
                 </div>
 
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#safeguarding">Safeguarding</a>
-                <a href="#downloads">Downloads</a>
-                <a href="#links">Useful Links</a>
-                <a href="#privacy">Privacy Policy</a>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Illistrin FC - All rights reserved</p>
-                <p>Proudly serving the football community in Donegal, Ireland</p>
-            </div>
-        </div>
-    </footer>
+    <footer></footer>
 
     <script>
         // Toggle blog expand/collapse
