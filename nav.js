@@ -248,6 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="footer-bottom">
                     <p>&copy; 2025 Illistrin FC - All rights reserved</p>
                     <p>Proudly serving the football community in Donegal, Ireland</p>
+                    <p style="margin-top:0.5rem;">Corry Park, Illistrin, Letterkenny, Co. Donegal &nbsp;|&nbsp; Eircode: F92 AH9V</p>
                 </div>
             </div>
         `;

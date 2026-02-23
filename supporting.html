@@ -202,6 +202,47 @@
             color: #999;
         }
 
+        .sub-title {
+            font-size: 1.4rem;
+            color: #1a1a1a;
+            margin: 2rem 0 1rem;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ffd700;
+        }
+
+        .sponsor-image {
+            display: block;
+            max-width: 320px;
+            width: 100%;
+            margin: 1.5rem auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .pitchsign-image {
+            display: block;
+            max-width: 700px;
+            width: 100%;
+            margin: 1.5rem auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .volunteer-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .volunteer-gallery img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -218,6 +259,10 @@
 
             .content-block {
                 padding: 1.5rem;
+            }
+
+            .volunteer-gallery {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -246,26 +291,32 @@
         <section class="section">
             <div class="container">
 
+                <!-- Intro -->
+                <div class="content-block">
+                    <p>Illistrin FC relies on the generous support of our community to keep the club running and to continue providing quality football opportunities for children and young people in the area. To ensure the continued and sustainable development of the club two main themes are critical — Volunteerism and Fundraising. Should you feel you can assist in either of these, please do not hesitate to reach out to one of those listed in the <a href="contacts.html">contacts section</a> of the site.</p>
+                </div>
+
                 <!-- Fundraising -->
                 <div class="content-block">
                     <h2 class="section-title">Fundraising</h2>
-                    <p>Illistrin FC relies on the generous support of our community to keep the club running and to continue providing quality football opportunities for children and young people in the Letterkenny area. Fundraising is essential to maintaining our facilities at Corry Park, purchasing equipment, and supporting our teams across all age groups.</p>
-                    <p>Throughout the year, the club organises a number of fundraising initiatives including:</p>
-                    <ul>
-                        <li>Annual club lotto</li>
-                        <li>Race nights and table quizzes</li>
-                        <li>Bag packing and community collections</li>
-                        <li>Sponsored events and challenges</li>
-                        <li>Kit and jersey sponsorship opportunities</li>
-                    </ul>
-                    <p>If you or your business would like to support Illistrin FC through sponsorship or donations, please get in touch via our <a href="contacts.html">Contacts page</a>. Every contribution, no matter how big or small, makes a real difference to the young players of our club.</p>
+                    <p>Fundraising is essential to maintaining our club and supporting our 20+ teams across all age groups. Grounds maintenance, equipment, jerseys, referee fees, transport and recognition nights provide a constant source of expense to the club. Any support received from the local community is needed and greatly appreciated.</p>
+
+                    <h3 class="sub-title">Main Club Sponsor</h3>
+                    <p>We are very grateful for the continued support of our 2026 main club sponsor — Kernans. We ask all our club members to use their retail outlets if and when they can.</p>
+                    <img src="support/kernans.jpg" alt="Kernans - Main Club Sponsor 2026" class="sponsor-image">
+                    <p>Should you wish to enquire about the possibility of providing club sponsorship in future years please reach out at any stage to one of those listed in the <a href="contacts.html">contacts section</a> of the site.</p>
+
+                    <h3 class="sub-title">Pitchside Signage</h3>
+                    <p>Buying a pitchside 8ft × 2ft sign at our home ground represents an excellent way for local businesses to support the club's activities. Please contact our treasurer to enquire about our 3 year and 1 year signage deals. Contact details are found in the <a href="contacts.html">contacts section</a> of the website.</p>
+                    <img src="support/Pitchsigns.jpg" alt="Pitchside Signage at Illistrin FC" class="pitchsign-image">
                 </div>
 
                 <!-- Volunteering -->
                 <div class="content-block">
                     <h2 class="section-title">Volunteering</h2>
-                    <p>Illistrin FC is run entirely by dedicated volunteers who give their time to ensure that over 300 young players can enjoy football in a safe, fun and supportive environment. With over 50 volunteers across the club, there are always opportunities to get involved.</p>
-                    <p>Whether you have experience in coaching, administration, event organisation, or simply want to lend a hand on match days, we would love to hear from you. Volunteering roles include:</p>
+                    <p>Illistrin FC is run entirely by dedicated volunteers who give their time to ensure that over 300 young players can enjoy football in a safe, fun and supportive environment. With over 60 volunteers across the club, there are always opportunities to get involved.</p>
+                    <p>Whether you have experience in coaching, administration, fund raising, ground maintenance, event organisation, or simply want to lend a hand on match days, we would love to hear from you.</p>
+                    <p>Volunteering roles include:</p>
                     <ul>
                         <li>Coaching and team management</li>
                         <li>Match day assistance and coordination</li>
@@ -275,6 +326,14 @@
                     </ul>
                     <p>All volunteers working with children are required to be Garda vetted and complete relevant safeguarding training in line with FAI policy. The club provides full support through this process.</p>
                     <p>Interested in volunteering? Reach out to us via the <a href="contacts.html">Contacts page</a> and we'll get you started.</p>
+
+                    <div class="volunteer-gallery">
+                        <img src="support/Vol1 - BB Strimming.PNG" alt="Volunteers maintaining the pitch">
+                        <img src="support/Vol 2- KD Seeding.PNG" alt="Volunteers seeding the grounds">
+                        <img src="support/Vol 3 - LadysMopping.JPG" alt="Volunteers at work">
+                        <img src="support/Vol 5 - IMG_2570.PNG" alt="Volunteers at work">
+                        <img src="support/Vol 6 LadsPainting.JPG" alt="Volunteers painting facilities">
+                    </div>
                 </div>
 
             </div>
