@@ -445,21 +445,26 @@
         <section class="section" id="news">
             <div class="container">
                 <h2 class="section-title">Latest Club News</h2>
+
                 <div class="news-item">
-                    <div class="news-date">June 2025</div>
-                    <div class="news-title">New Season Registration Open</div>
-                    <p>Registration for the 2025 season is now open for all age groups. Contact us for more information about joining Illistrin FC.</p>
+                    <div class="news-date">23rd February 2026</div>
+                    <div class="news-title">U15s Welcome Athlone Side to Letterkenny in SFAI Trophy Last 16 Clash</div>
+                    <p>Sunday 1st March sees Illistrin FC's U15 team push to make the quarter finals of this year's SFAI trophy competition as they take on St Joseph Reds of Athlone at The Aura Leisure Centre pitch. Illistrin secured a home fixture following an impressive 2-0 away win against Cherry Orchard of Dublin at the start of February.</p>
+                    <div style="margin-top:0.75rem;">
+                        <button onclick="toggleNews('news-u15', this)" style="background:none; border:none; color:#1a1a1a; font-weight:600; font-size:0.95rem; cursor:pointer; border-bottom:2px solid #ffd700; padding-bottom:2px;">Read more</button>
+                    </div>
+                    <div id="news-u15" style="max-height:0; overflow:hidden; transition:max-height 0.5s ease;">
+                        <div style="margin-top:1rem; color:#444; line-height:1.8; font-size:1rem;">
+                            <p style="margin-bottom:0.75rem;">This team, under the stewardship of Seamus Murphy ably assisted by Michael McGlynn and Ciaran McElwaine, had battled through the earlier rounds of the competition in the autumn of 2025. Having beaten St Catherines of Killybegs in the Ulster final back in December 2025, the boys made their way into the National Trophy phase. Strong wins against Cootehill Harps in Cavan and then Cherry Orchard in Dublin set up this eagerly awaited home fixture.</p>
+                            <p style="margin-bottom:0.75rem;">Head coach Seamus Murphy said: <em>"These boys have worked so hard over the past number of years and deserve every bit of success that comes their way. To come away with the win against a strongly fancied Cherry Orchard side shows the character and spirit that these boys have — not to mention their football abilities. They are a credit to themselves and the club."</em></p>
+                            <p style="margin-bottom:0.75rem;">Club chairman Annraoi Cheevers added: <em>"On behalf of everyone from the club we want to congratulate these boys and their coaches on another fantastic run. We're hoping for a big turnout — so if you are about on Sunday, please pop down and give the boys as much sideline support as we can."</em></p>
+                            <p style="margin-bottom:0.75rem;">Much thanks as always to club sponsors Kernans for their committed support to this team and all Illistrin teams throughout the past few seasons.</p>
+                            <p style="margin-bottom:0.75rem;"><strong>U15 Squad:</strong> Daire Gallagher, Shay Murphy, Sean Tunny, Conn O Baoill, Sean Lavin, Ryan Gallagher, Stephen McShane, Tom McElwaine, Davyn McGlynn, Zac O Carroll, Darragh Edwards, Paddy Hasslett, Daibhin Harkin, Ashton Forrester, Kayden Sterritt, Oisin McElhiney, Darragh Coyle, Daithai Winston.</p>
+                            <p><strong>Venue:</strong> The Aura Leisure Centre &nbsp;|&nbsp; <strong>Kick-off:</strong> Sunday 1st March, 2:30pm. All support welcome!</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">May 2025</div>
-                    <div class="news-title">Youth Team Success</div>
-                    <p>Congratulations to our U-16 team for their outstanding performance in the recent Donegal Youth League matches.</p>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">April 2025</div>
-                    <div class="news-title">Training Schedule Updated</div>
-                    <p>New training times for the summer season. Check with your coach or visit our calendar for the latest schedule updates.</p>
-                </div>
+
             </div>
         </section>
 
@@ -495,6 +500,14 @@
     <footer></footer>
 
     <script>
+        // Toggle news expand/collapse
+        function toggleNews(id, btn) {
+            const body = document.getElementById(id);
+            const isOpen = body.style.maxHeight && body.style.maxHeight !== '0px';
+            body.style.maxHeight = isOpen ? '0' : body.scrollHeight + 'px';
+            btn.textContent = isOpen ? 'Read more' : 'Read less';
+        }
+
         // Duplicate carousel items for seamless infinite scroll
         const track = document.getElementById('carouselTrack');
         const slides = track.innerHTML;
