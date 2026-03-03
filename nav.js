@@ -241,12 +241,20 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="footer-content">
                 <div class="footer-links">
                     <a href="safeguarding.html">Safeguarding</a>
-                    <a href="#downloads">Downloads</a>
-                    <a href="#links">Useful Links</a>
-                    <a href="#privacy">Privacy Policy</a>
+                    <a href="policies.html">Policies &amp; Procedures</a>
+                </div>
+                <div style="margin-bottom:1.5rem;">
+                    <p style="color:#aaa; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.75rem;">Useful Links</p>
+                    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem 2rem;">
+                        <a href="https://www.fai.ie" target="_blank" rel="noopener" style="color:#ffd700; text-decoration:none; transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">FAI Homepage</a>
+                        <a href="https://www.fai.ie/safeguarding/fai-safeguarding-framework/" target="_blank" rel="noopener" style="color:#ffd700; text-decoration:none; transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">FAI Safeguarding Framework</a>
+                        <a href="https://www.faiconnect.ie" target="_blank" rel="noopener" style="color:#ffd700; text-decoration:none; transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">FAI Connect</a>
+                        <a href="http://www.donegaljuniorleague.ie/" target="_blank" rel="noopener" style="color:#ffd700; text-decoration:none; transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Donegal Junior League</a>
+                        <a href="https://illistrin.town.ie" target="_blank" rel="noopener" style="color:#ffd700; text-decoration:none; transition:opacity 0.3s ease;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Illistrin School</a>
+                    </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2025 Illistrin FC - All rights reserved</p>
+                    <p>&copy; 2026 Illistrin FC - All rights reserved</p>
                     <p>Proudly serving the football community in Donegal, Ireland</p>
                     <p style="margin-top:0.5rem;">Corry Park, Illistrin, Letterkenny, Co. Donegal &nbsp;|&nbsp; Eircode: F92 AH9V</p>
                 </div>
